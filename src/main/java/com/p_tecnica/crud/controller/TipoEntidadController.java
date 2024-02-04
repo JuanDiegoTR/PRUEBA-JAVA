@@ -20,7 +20,6 @@ public class TipoEntidadController {
     }
 
     @GetMapping("listar")
-    @Operation(summary = "Obtener listado de tipo de entidades", description = "Devuelve una lista de entidades")
     public ResponseEntity<MensajeResponseRest> listEntidad(){
         return new ResponseEntity<>(tipoEntidadServices.listEntidad(), HttpStatus.OK);
     }

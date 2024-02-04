@@ -37,19 +37,16 @@ public class CuentaController {
     }
 
     @PutMapping("editar")
-    @Operation(summary = "Crear un tipo de entidad")
     public ResponseEntity<MensajeResponseRest> editarCuenta(@RequestBody CuentaEditDTO cuentaEditDTO){
         return new ResponseEntity<>(cuentasServices.editarCuenta(cuentaEditDTO), HttpStatus.OK);
     }
 
     @GetMapping("tipo/listar")
-    @Operation(summary = "Obtener listado de tipo de entidades", description = "Devuelve una lista de entidades")
     public ResponseEntity<MensajeResponseRest> listTipoCuentas(){
         return new ResponseEntity<>(tipoCuentaServices.listCuenta(), HttpStatus.OK);
     }
 
     @GetMapping("estados/listar")
-    @Operation(summary = "Obtener listado de tipo de entidades", description = "Devuelve una lista de entidades")
     public ResponseEntity<MensajeResponseRest> listEstados(){
         return new ResponseEntity<>(estadosCuentasServices.listEstadoCuenta(), HttpStatus.OK);
     }
