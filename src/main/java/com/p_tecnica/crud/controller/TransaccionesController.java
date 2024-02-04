@@ -24,13 +24,11 @@ public class TransaccionesController {
     }
 
     @PostMapping("crear")
-    @Operation(summary = "Crear un tipo de tansaccion")
     public ResponseEntity<MensajeResponseRest> crearTransaccion(@RequestBody TransaccionLoginDTO transaccionLoginDTO){
         return new ResponseEntity<>(transaccionesServices.createTransaccion(transaccionLoginDTO), HttpStatus.OK);
     }
 
     @GetMapping("tipo/listar")
-    @Operation(summary = "Obtener listado de tipo de entidades", description = "Devuelve una lista de entidades")
     public ResponseEntity<MensajeResponseRest> listTransaccion(){
         return new ResponseEntity<>(tipoTransaccionesServices.lisTipoTransacciones(), HttpStatus.OK);
     }
